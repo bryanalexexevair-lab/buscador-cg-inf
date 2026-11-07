@@ -1,0 +1,25 @@
+:root {
+  color-scheme: light;
+  font-family: Calibri, Arial, sans-serif;
+  color: #202124;
+  background: #fff;
+}
+
+body { margin: 0; padding: 20px; }
+main { display: grid; gap: 14px; }
+h1 { margin: 0; color: #174a2d; font-size: 22px; }
+p { margin: 0; line-height: 1.4; }
+button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  background: #217346;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: #185c37; }
+#status { padding: 10px; background: #f1f6f3; border-left: 3px solid #217346; }
+.hint { color: #5d6268; font-size: 13px; }

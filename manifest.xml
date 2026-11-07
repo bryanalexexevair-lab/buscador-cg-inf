@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+  <Id>6c61ed62-44c9-4eb9-b013-88900acbab61</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Buscador CG INF</ProviderName>
+  <DefaultLocale>es-GT</DefaultLocale>
+  <DisplayName DefaultValue="Buscador CG INF" />
+  <Description DefaultValue="Busca datos y comentarios modernos en la hoja mensual del libro." />
+  <IconUrl DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/icon-80.png" />
+  <SupportUrl DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/" />
+  <AppDomains>
+    <AppDomain>https://bryanalexexevair-lab.github.io</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="ExcelApi" MinVersion="1.10" />
+      <Set Name="SharedRuntime" MinVersion="1.1" />
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/index.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+    xsi:type="VersionOverridesV1_0">
+    <Description resid="Res.Description" />
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="Taskpane.Url" lifetime="long" />
+        </Runtimes>
+        <DesktopFormFactor>
+          <FunctionFile resid="Taskpane.Url" />
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="BuscadorCGINF.Tab">
+              <Label resid="Tab.Label" />
+              <Group id="BuscadorCGINF.Group">
+                <Label resid="Group.Label" />
+                <Control xsi:type="Button" id="BuscadorCGINF.SearchButton">
+                  <Label resid="Search.Label" />
+                  <Supertip>
+                    <Title resid="Search.Label" />
+                    <Description resid="Search.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16" />
+                    <bt:Image size="32" resid="Icon.32" />
+                    <bt:Image size="80" resid="Icon.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>searchNow</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="BuscadorCGINF.AutoButton">
+                  <Label resid="Auto.Label" />
+                  <Supertip>
+                    <Title resid="Auto.Label" />
+                    <Description resid="Auto.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16" />
+                    <bt:Image size="32" resid="Icon.32" />
+                    <bt:Image size="80" resid="Icon.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>enableAutoSearch</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="BuscadorCGINF.PanelButton">
+                  <Label resid="Panel.Label" />
+                  <Supertip>
+                    <Title resid="Panel.Label" />
+                    <Description resid="Panel.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16" />
+                    <bt:Image size="32" resid="Icon.32" />
+                    <bt:Image size="80" resid="Icon.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/icon-16.png" />
+        <bt:Image id="Icon.32" DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/icon-32.png" />
+        <bt:Image id="Icon.80" DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://bryanalexexevair-lab.github.io/buscador-cg-inf/index.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Tab.Label" DefaultValue="Buscador CG INF" />
+        <bt:String id="Group.Label" DefaultValue="Búsqueda" />
+        <bt:String id="Search.Label" DefaultValue="BUSCAR" />
+        <bt:String id="Auto.Label" DefaultValue="ACTIVAR AUTOMÁTICO" />
+        <bt:String id="Panel.Label" DefaultValue="ABRIR PANEL" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="Res.Description" DefaultValue="Buscador CG INF para datos y comentarios modernos en la hoja mensual." />
+        <bt:String id="Search.Tooltip" DefaultValue="Buscar el texto de buscador!G2 en la hoja mensual y sus comentarios." />
+        <bt:String id="Auto.Tooltip" DefaultValue="Activar la búsqueda automática al cambiar G2 y al volver a abrir este libro." />
+        <bt:String id="Panel.Tooltip" DefaultValue="Abrir el panel con el estado del buscador." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
